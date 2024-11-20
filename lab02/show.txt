@@ -1,0 +1,64 @@
+<?php
+include("class.php");
+?>
+
+
+<?php
+echo "<h2> ผลการคำนวณ </h2>";
+$a= $_POST['num_a'];
+$b= $_POST['num_b'];
+$d= $_POST['num'];
+
+$ob_c = new classnum($a, $b);
+
+if($d=="add")
+{
+$e= "+";
+$c = $ob_c->add();
+}//
+
+elseif($d=="substract")
+{
+$e= "-";    
+$c = $ob_c->substract();
+}//
+
+elseif($d=="multiplication")
+{
+$e= "*";    
+$c = $ob_c->multiplication();
+}//
+
+elseif($d=="division")
+{
+$e= "/";    
+$c = $ob_c->division();
+}//
+
+elseif($d=="exponent")
+{
+$e= "^";    
+$c = $ob_c->exponent();
+}//
+
+elseif($d=="fractional")
+{
+$e= "%";    
+$c = $ob_c->fractional();
+}//
+
+elseif($d=="Part")
+{
+$e= "\\";    
+$c = $ob_c->Part();
+}//
+
+
+
+
+echo "$a $e $b = " . $c;
+?>
+
+
+<hr>
+<a href="index.html">กลับ</a>

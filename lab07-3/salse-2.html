@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>peeranatLAB</title>
+    
+    <style>
+        body {
+            background-color: #f0f4f8; /* Light cool background color */
+            color: #333; /* Dark text color for better readability */
+        }
+        .container {
+            background-color: #ffffff; /* White background for the form container */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+        .form-label {
+            color: #007bff; /* Blue color for labels */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Matching button color with the label */
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade for button hover */
+            border-color: #004085;
+        }
+        .btn-primary:focus, .btn-primary.focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Button focus shadow */
+        }
+        .form-control:focus {
+            border-color: #007bff; /* Blue border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow effect */
+        }
+        .row.mb-3 {
+            margin-bottom: 1.5rem;
+        }
+        h2 {
+            color: #007bff; /* Blue color for the heading */
+            font-weight: 600; /* Slightly bolder heading */
+        }
+        .form-select {
+            background-color: #f0f4f8; /* Light cool background for dropdown */
+            border: 1px solid #007bff; /* Blue border for dropdown */
+            border-radius: 0.25rem; /* Rounded corners */
+            padding: 0.375rem 0.75rem; /* Padding for a better look */
+        }
+        .form-select:focus {
+            border-color: #007bff; /* Blue border on focus */
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25); /* Focus shadow effect */
+        }
+        .form-select option {
+            background-color: #ffffff; /* White background for options */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">แบบฟอร์มคำนวณยอดขายสินค้า</h2>
+        <form action="?p=sales-2" method="POST">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="code" class="form-label">รหัสสินค้า</label>
+                    <input type="text" class="form-control" id="code" name="code" placeholder="กรุณาป้อนรหัสสินค้า"
+                        required value="558">
+                </div>
+                <div class="col-md-4">
+                    <label for="name" class="form-label">ชื่อ</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="กรุณาป้อนชื่อสินค้า"
+                        required value="มาม่า">
+                </div>
+                <div class="form-group">
+                    <label for="type" class="form-label">ประเภทสินค้า</label>
+                    <div class="form-group">
+                    <select class="form-select" id="type" name="type" required>
+                        <option value="" disabled selected>กรุณาเลือกประเภทสินค้า</option>
+                        <option value="อาหารแห้ง" selected>อาหารแห้ง</option>
+                        <option value="อาหารสด">อาหารสด</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="price" class="form-label">ราคาต่อหน่วย</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="กรุณาป้อนราคา"
+                        required value="150">
+                </div>
+                <div class="col-md-6">
+                    <label for="unit" class="form-label">จำนวนซื้อ</label>
+                    <input type="number" class="form-control" id="unit" name="unit" placeholder="กรุณาป้อนจำนวน"
+                        required value="50">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <button type="submit" class="btn btn-primary btn-block">คำนวณยอดขาย</button>
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>

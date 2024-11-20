@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Area Form</title>
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Select Shape and Enter Dimensions</h1>
+
+        <form action="?p=processpoly" method="POST">
+            <!-- เลือกรูปทรง -->
+            <div class="mb-3">
+                <label for="shape" class="form-label">Select Shape</label>
+                <select name="shape" id="shape" class="form-select" required>
+                    <option value="" disabled selected>Select a shape</option>
+                    <option value="Triangle">Triangle</option>
+                    <option value="Rectangle">Rectangle</option>
+                    <option value="Circle">Circle</option>
+                </select>
+            </div>
+
+            <!-- ฟิลด์สำหรับสามเหลี่ยม -->
+            <div id="triangleFields" class="d-none">
+                <h4>Triangle Dimensions</h4>
+                <div class="mb-3">
+                    <label for="triangleBase" class="form-label">Base</label>
+                    <input type="number" name="triangleBase" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="triangleHeight" class="form-label">Height</label>
+                    <input type="number" name="triangleHeight" class="form-control">
+                </div>
+            </div>
+
+            <!-- ฟิลด์สำหรับสี่เหลี่ยม -->
+            <div id="rectangleFields" class="d-none">
+                <h4>Rectangle Dimensions</h4>
+                <div class="mb-3">
+                    <label for="rectangleWidth" class="form-label">Width</label>
+                    <input type="number" name="rectangleWidth" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="rectangleHeight" class="form-label">Height</label>
+                    <input type="number" name="rectangleHeight" class="form-control">
+                </div>
+            </div>
+
+            <!-- ฟิลด์สำหรับวงกลม -->
+            <div id="circleFields" class="d-none">
+                <h4>Circle Dimensions</h4>
+                <div class="mb-3">
+                    <label for="circleRadius" class="form-label">Radius</label>
+                    <input type="number" name="circleRadius" class="form-control">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 5 JS และ JavaScript สำหรับแสดงฟิลด์ input ตามที่เลือก -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script>
+        document.getElementById('shape').addEventListener('change', function() {
+            // ซ่อนฟิลด์ทั้งหมดก่อน
+            document.getElementById('triangleFields').classList.add('d-none');
+            document.getElementById('rectangleFields').classList.add('d-none');
+            document.getElementById('circleFields').classList.add('d-none');
+
+            // แสดงฟิลด์ตามรูปทรงที่เลือก
+            const shape = this.value;
+            if (shape === 'Triangle') {
+                document.getElementById('triangleFields').classList.remove('d-none');
+            } else if (shape === 'Rectangle') {
+                document.getElementById('rectangleFields').classList.remove('d-none');
+            } else if (shape === 'Circle') {
+                document.getElementById('circleFields').classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+</html>

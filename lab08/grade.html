@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Form</title>
+   
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">แบบฟอร์มกรอกข้อมูลคะแนน<br>วิชาการเขียนโปรแกรมเชิงวัตถุ</h2>
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#myModal">
+            โจทย์
+          </button>
+        <form action="?p=process" method="POST">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="code" class="form-label">รหัสนักศึกษา</label>
+                    <input type="text" class="form-control" id="code" name="code" placeholder="กรุณากรอกรหัสนักเรียน" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="name" class="form-label">ชื่อ-สกุล</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="กรุณากรอกชื่อ" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="midterm" class="form-label">คะแนนสอบกลางภาค</label>
+                    <input type="number" class="form-control" id="midterm" name="midterm" placeholder="กรุณากรอกคะแนนสอบกลางภาค" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="final" class="form-label">คะแนนสอบปลายภาค</label>
+                    <input type="number" class="form-control" id="final" name="final" placeholder="กรุณากรอกคะแนนสอบปลายภาค" required>
+                </div>
+            </div>
+                <div class="row mb-3">          
+                    <button type="submit" class="btn btn-primary">คำนวณผลการเรียน</button>
+                </div>    
+        </form>
+    </div>
+
+   
+    
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">โจทย์การคำนวณผลการเรียน</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+              <img src="lab08/grade.JPG">
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputnumder</title>
+</head>
+<body>
+
+    <form action="show.php" method="POST">
+        <label for="numder_a">ป้อนค่า A :</label>
+            <input type="number" name="num_a" placeholder="ป้อนค่าตัวเลข" required>
+        <br>
+
+
+        <label for="cars">สัญลักษณ์:</label>
+        <select name="num">
+          <option value="add">+</option>
+          <option value="substract">-</option>
+          <option value="multiplication">*</option>
+          <option value="division">/</option>
+          <option value="exponent">^</option>
+          <option value="fractional">%</option>
+          <option value="Part">\\</option>
+        </select>
+        <br>
+
+        <label for="numder_b">ป้อนค่า B :</label>
+            <input type="number" name="num_b" placeholder="ป้อนค่าตัวเลข" required>
+        <br>
+
+        <button type="submit">คำนวณ</button>
+        <br>
+
+    </form>
+
+</body>
+</html>
+
+
